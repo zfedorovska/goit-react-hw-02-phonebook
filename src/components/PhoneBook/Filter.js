@@ -1,6 +1,7 @@
 import React from "react";
 import { nanoid } from 'nanoid'
 import s from './PhoneBook.module.css';
+import PropTypes from 'prop-types';
 
 let filterId = nanoid(); 
 const Filter = ({ value, onChange }) => (
@@ -15,5 +16,10 @@ const Filter = ({ value, onChange }) => (
             onChange={onChange} />
     </div>
 );
+
+Filter.propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func
+};
 
 export default Filter;
